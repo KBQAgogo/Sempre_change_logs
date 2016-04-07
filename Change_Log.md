@@ -32,3 +32,43 @@ code reading:
 --- Learner
 
 next step: need to find out how those features are extracted while training the data; 
+
+
+
+
+
+
+--bing
+
+#### Possible improvement points from paper ??
++ "For unary predicates, we consider all logical forms Type.t and Profession.t for all (abstract) entities t.... The types of logical predicates considered during alignment is restricted in this paper, bu automatic induction of more compositional logical predicates is an interesting direction..." 
++ "Given the phrase r1 and the Freebase name s2 of the predicate r2, we compute string similarity features such as whether r1 and s2 are equal as well as some other measres of token overlap.."   
+Possible to involve a threshold of word distance here??
+
+##### code
+SemanticFun.java
+
+
+```java
+// Main entry point: given information the arguments of the SemanticFn,
+  // return a list of Derivations.
+  public abstract List<Derivation> call(Example ex, Callable c);
+```
+
+Derivation implements SemanticFun.Callable    
+
+so we can call derivation addFeature()  to add the feature we want to impose on the specific derivation. 
+  
+  
+  
+```java
+  // Functions that operate on features.
+  public void addFeature(String domain, String name) { addFeature(domain, name, 1); }
+  public void addFeature(String domain, String name, double value) { this.localFeatureVector.add(domain, name, value); }
+  public void addFeatureWithBias(String domain, String name, double value) { this.localFeatureVector.addWithBias(domain, name, value); }
+  public void addFeatures(FeatureVector fv) { this.localFeatureVector.add(fv); }
+  public void addFeatures(Derivation deriv) { this.localFeatureVector.add(deriv.localFeatureVector); }
+  
+```
+
+Then the when the score of the derivation is computed, these features are used to do the dot product
