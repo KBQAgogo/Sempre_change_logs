@@ -71,4 +71,6 @@ so we can call derivation addFeature()  to add the feature we want to impose on 
   
 ```
 
-Then the when the score of the derivation is computed, these features are used to do the dot product
+Then the when the score of the derivation is computed, these features are used to do the dot product   
+
+Tmr need to run the system and reproduce the experiment data firstly....gogo
