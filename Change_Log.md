@@ -45,7 +45,7 @@ next step: need to find out how those features are extracted while training the 
 + "Given the phrase r1 and the Freebase name s2 of the predicate r2, we compute string similarity features such as whether r1 and s2 are equal as well as some other measres of token overlap.."   
 Possible to involve a threshold of word distance here??
 
-##### code
+#### Code
 SemanticFun.java
 
 
