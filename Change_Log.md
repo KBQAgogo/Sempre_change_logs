@@ -81,3 +81,4 @@ Tmr need to run the system and reproduce the experiment data firstly....gogo
 ## Apr 20
 + Added SVM.java to the project which hasn't been completed and tested.
 + The TODO parts needs reconsideration or finishing.
++ Slightly modified Params.java and Learner.java
