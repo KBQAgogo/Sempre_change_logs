@@ -74,3 +74,10 @@ so we can call derivation addFeature()  to add the feature we want to impose on 
 Then the when the score of the derivation is computed, these features are used to do the dot product   
 
 Tmr need to run the system and reproduce the experiment data firstly....gogo
+
+
+
+
+## Apr 20
++ Added SVM.java to the project which hasn't been completed and tested.
++ The TODO parts needs reconsideration or finishing.
